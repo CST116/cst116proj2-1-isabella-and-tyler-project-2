@@ -104,12 +104,15 @@ void ProcessMenuChoice (int menu_choice, int& usr_data) {
 
     if (program_rerun == 1)
         main();
-
+    else {
     cout << "================================================================" << endl;
     cout <<  "Program Closing..." << endl;
     cout << "================================================================\n\n\n" << endl;
 }
 
+
+    }
+    
 
 void IsPosNeg (int usr_data) {
     // checks whether the number entered is positive or negative. 
