@@ -11,9 +11,13 @@ using namespace std;
 
 int GetData();
 void DisplayMenu (int&);
-void ProcessMenuChoice (int, int&);
+void ProcessMenuChoice (int, int);
 void IsPosNeg (int);
 void IsOddEven (int);
+void DisplayAdditionTable();
+void DisplayMultiplicationTable();
+void FindNumDigits(int);
+void FindDigitAtPosition(int);
 
 int main() {
     int User_Value = 0;
@@ -33,7 +37,6 @@ int GetData(){
     cout << "================================================================" << endl;
     cout <<  "Program Running..." << endl;
     cout << "================================================================\n\n\n" << endl;
-    
 
     cout << "Please enter the number you would like to have tested: ";
     cin >> usr_data;
@@ -65,7 +68,7 @@ void DisplayMenu(int& menu_choice) {
 }
 
 
-void ProcessMenuChoice (int menu_choice, int& usr_data) {
+void ProcessMenuChoice (int menu_choice, int usr_data) {
     int program_rerun = 0;
     switch(menu_choice){
         case 1: 
@@ -77,19 +80,19 @@ void ProcessMenuChoice (int menu_choice, int& usr_data) {
             break;
 
         case 3:
-            cout << "Find num digits" << endl;
+            FindNumDigits(usr_data);
             break;
 
         case 4:
-            cout << "Find digit at position" << endl;
+            FindDigitAtPosition(usr_data);
             break;
 
         case 5:
-            cout << "Display addition table" << endl;
+            DisplayAdditionTable();
             break;
 
         case 6: 
-            cout << "Display multiplication table" << endl;
+            DisplayMultiplicationTable();
             break;
 
         case 7: 
@@ -104,6 +107,7 @@ void ProcessMenuChoice (int menu_choice, int& usr_data) {
 
     if (program_rerun == 1)
         main();
+    
     else {
     cout << "================================================================" << endl;
     cout <<  "Program Closing..." << endl;
@@ -140,11 +144,86 @@ void IsOddEven(int usr_data) {
 
 
 
+void DisplayAdditionTable()
+{
+    int i, j, k;
+    int intList1[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int intList2[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+    cout << "ADDITION TABLE!\n" << endl;
+    
+    for (i = 0; i < 11; i++) {
+        cout << setw(5) << left << intList1[i] << setw(5) << left;
+    }
+    cout << endl;
+
+    for (k = 0; k < 10; k++) {
+        cout << setw(5) << left << intList2[k];
+        for (j = 1; j < 11; j++) {
+            cout << setw(5) << left << intList1[j] + intList2[k];
+        }
+        cout << endl;
+    }
+    
+    cout << endl;
+
+}
 
 
 
+void DisplayMultiplicationTable()
+{
+  int i, j, k;
+    int intList1[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int intList2[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+    cout << "Multiplication Table!\n" << endl;
+    
+    for (i = 0; i < 11; i++) {
+        cout << setw(5) << left << intList1[i] << setw(5) << left;
+    }
+    cout << endl;
+
+    for (k = 0; k < 10; k++) {
+        cout << setw(5) << left << intList2[k];
+        for (j = 1; j < 11; j++) {
+            cout << setw(5) << left << intList1[j] * intList2[k];
+        }
+        cout << endl;
+    }
+    
+    cout << endl;
+ 
+}
 
 
+void FindNumDigits(int usr_data)
+{
+    int i = usr_data;
+
+    // the "length" of 0 is 1:
+    int len = 1;
+
+    // and for numbers greater than 0:
+    if (i > 0) {
+        // we count how many times it can be divided by 10:
+        // (how many times we can cut off the last digit until we end up with 0)
+        for (len = 0; i > 0; len++) {
+            i = i / 10;
+        }
+    }
+
+    // and that's our "length":
+    cout << len << endl << endl; 
+}
+
+
+void FindDigitAtPosition(int usr_data) 
+{
+    cout << "Find dig at pos" << endl;
+
+
+}
 
 
 
