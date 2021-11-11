@@ -1,0 +1,56 @@
+Tyler Taormina Agile Questions
+
+1st session
+===============================================================================
+1. In the next half hour I will begin constructing an outline for the entire
+project.
+
+2. I know that we will need to have six functinos for the user to choose from.
+I know that we will need a way to gather input from the user, process the input
+data. In all, I would expect to use 7-9 functions.
+
+3. I don't know where I will need assignments by reference or by value. I also
+don't know how I am going to manipulate the integer to acheive the desired
+functionality of the program.
+
+
+2nd session
+===============================================================================
+1.In the next half hour I will start by writing functions for displaying the
+menu and allowing the user to choose from the menu. I will also start to work
+on a function that will process the user input and use that data to call the
+desired function.
+
+2. I know that I will need to read an input from the user. I also know that in
+the processing function I will need to use a switch statement.
+
+3. I don't know how I will allow the user to choose to end the program.
+
+
+
+3rd session
+===============================================================================
+1. In the next half hour I will begin writing the multiplication and addition
+tables.
+
+2. I know the layout and the range that are desired for the multiplication
+tables. I also know that I will most likely need to use nested for loops for
+this function.
+
+3. I don't know exactly how the indexing will work inside of the nested for
+loops.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
