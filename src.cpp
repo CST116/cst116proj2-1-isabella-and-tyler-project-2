@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 using namespace std;
 
@@ -199,45 +200,54 @@ void DisplayMultiplicationTable()
 
 void FindNumDigits(int usr_data)
 {
-    int i = usr_data;
+    int copy = usr_data;
 
     // the "length" of 0 is 1:
-    int len = 1;
+    int length = 1;
 
     // and for numbers greater than 0:
-    if (i > 0) {
+    if (copy > 0) {
         // we count how many times it can be divided by 10:
         // (how many times we can cut off the last digit until we end up with 0)
-        for (len = 0; i > 0; len++) {
-            i = i / 10;
+        for (length = 0; copy > 0; length++) {
+            copy /= 10;
         }
     }
 
     // and that's our "length":
-    cout << len << endl << endl; 
+    cout << "The number of digits is: " <<  length << endl << endl; 
 }
 
 
 void FindDigitAtPosition(int usr_data) 
+
 {
-    cout << "Find dig at pos" << endl;
+    int position = 0;
+    int copy = usr_data;
+    int copy_length = usr_data;
+    int correct_pos;
 
+    // the "length" of 0 is 1:
+    int length = 1;
 
+    // and for numbers greater than 0:
+    if (copy_length > 0) {
+        // we count how many times it can be divided by 10:
+        // (how many times we can cut off the last digit until we end up with 0)
+        for (length = 0; copy_length > 0; length++) {
+            copy_length /= 10;
+        }
+    }
+
+    cout << "Enter the position you would like to check: ";
+    cin >> position;
+    correct_pos = length - position;
+
+    copy /= pow(10, correct_pos);
+    copy = abs(copy % 10);
+
+    cout << "The number at position " << position << " is: " << copy << endl;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
